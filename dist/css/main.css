@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #324eaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container .wrapper {
+  padding: 1rem;
+}
+
+.container .wrapper h1 {
+  border-bottom: 1px solid grey;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.container .wrapper .fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .wrapper .fields .form-control {
+  margin: 1rem;
+}
+
+.container .wrapper .form {
+  padding: 1rem;
+}
+
+.container .wrapper .form .form-control {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.container .wrapper .form .form-control i {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #252850;
+}
+
+.container .wrapper .form .form-control input, .container .wrapper .form textarea, .container .wrapper .form input[type="submit"] {
+  width: 100%;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.container .wrapper .form textarea {
+  height: 150px;
+  max-height: 100px;
+  min-height: 100px;
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+}
+
+.container .wrapper .form .form-control input:focus, .container .wrapper .form textarea:focus {
+  border: 1px solid red;
+}
+
+.container .wrapper .form .form-control input:focus + i, .container .wrapper .form textarea:focus + i {
+  color: red;
+}
+
+.container .wrapper .form .submit {
+  background-color: #025223;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.container .wrapper .form .submit:hover {
+  background-color: green;
+}
+
+@media (max-width: 800px) {
+  .container .wrapper .fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container .wrapper .fields .form-control {
+    margin: 0;
+  }
+  .container .wrapper .form-control input, .container .wrapper textarea, .container .wrapper input[type="submit"] {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */

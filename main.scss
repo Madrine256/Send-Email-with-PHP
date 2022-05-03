@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// mixins/ reuasable code
+
+@mixin flexbox($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    background-color: #324eaa;
+    @include flexbox(row);
+    height: 100vh;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 10px;
+
+
+    .wrapper{
+        padding:1rem;
+
+        h1{
+            border-bottom: 1px solid grey;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        .fields{
+            @include flexbox(row);
+
+            .form-control{
+                margin: 1rem;
+            }
+        }
+        .form{
+            padding:1rem;
+
+            .form-control{
+                position: relative;
+                left: 0;
+                top: 0;
+
+                i{
+                    position: absolute;
+                    left: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 1.3rem;
+                    color: #252850;
+                }
+            }
+            .form-control input , textarea, input[type="submit"]{
+                width: 100%;
+                padding: 1rem 3rem;
+                border-radius: 10px;
+               outline: none;
+               font-size: 1rem;
+               margin: 1rem;
+               
+            }
+            textarea{
+                height: 150px ;
+                max-height: 100px;
+                min-height: 100px;
+                width: 100%;
+                max-width: 100%;
+                resize: none;
+            }
+
+            // Effects on focus of the inputs 
+                .form-control input:focus, textarea:focus{
+                    border: 1px solid red;
+                }
+            .form-control input:focus + i , textarea:focus + i{
+                color: red;
+            }
+            .submit{
+                background-color: rgb(2, 82, 35);
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 700;
+                outline:none;
+                border: none;
+                transition: all .3s ease-in-out;
+            }
+            .submit:hover{
+                background-color:green ;
+            }
+        }
+    }
+}
+
+// medai querries for smaller devices
+@media  (max-width: 800px){
+    .container .wrapper {
+       
+        .fields{
+        @include flexbox(column);
+
+        .form-control{   margin: 0;  }
+        }
+
+        .form-control input , textarea, input[type="submit"]{
+            margin: 0;
+        }
+    }
+}
