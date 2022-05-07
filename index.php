@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send message</title>
-    <link rel="stylesheet" href="/dist/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-</head>
-<body>
+<?php 
+    include_once("./includes/header.php");
+?>
      <div class="container">
          <div class="wrapper">
              <h1>Send Us amessage</h1>
-             <form action="" class="form">
+             <form class="form">
                  <div class="fields">
                     <div class="form-control">
                  
@@ -22,6 +14,7 @@
                     <div class="form-control">
                        
                         <input type="text" name="phone" id="phone" placeholder="Enter your phone..">
+                        
                         <i class="fas fa-phone"></i>
                     </div>
                  </div>
@@ -38,14 +31,22 @@
                     </div>
                 </div>
               
-                <div class="form-control">
+                <div class="form-control message-area">
                     
                     <textarea name="message" id="message" placeholder="Enter your message here..."></textarea>
                     <i class="fas fa-message"></i>
                 </div>
-                <input type="submit" value="Send" class="submit">
+                <div class="fields button-area">
+                    <input type="submit" value="Send message" class="submit">
+                    <span class="status">
+                        sending your message...👍
+                    </span>
+                </div>
+              
              </form>
          </div>
      </div>
-</body>
-</html>
+
+<?php
+    include_once("./includes/footer.php");
+?> 

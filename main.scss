@@ -13,7 +13,7 @@
     justify-content: center;
 }
 body{
-    background-color: #324eaa;
+    background-color: #5e79d1;
     @include flexbox(row);
     height: 100vh;
 }
@@ -55,22 +55,35 @@ body{
                     color: #252850;
                 }
             }
-            .form-control input , textarea, input[type="submit"]{
+            .form-control input , textarea{
                 width: 100%;
                 padding: 1rem 3rem;
                 border-radius: 10px;
                outline: none;
+               border-width: 1px;
                font-size: 1rem;
                margin: 1rem;
                
             }
             textarea{
-                height: 150px ;
-                max-height: 100px;
+                min-width: 100%;
+                max-height: 200px;
                 min-height: 100px;
                 width: 100%;
                 max-width: 100%;
-                resize: none;
+             
+            }
+            .message-area{
+                position: relative;
+                left: 0;
+                top: 0;
+
+                i{
+                    position: absolute;
+                    top: 35%;
+                    left: 30px;
+                    transform-origin: 100%;
+                }
             }
 
             // Effects on focus of the inputs 
@@ -80,30 +93,65 @@ body{
             .form-control input:focus + i , textarea:focus + i{
                 color: red;
             }
-            .submit{
-                background-color: rgb(2, 82, 35);
-                color: #fff;
-                font-size: 1rem;
-                font-weight: 700;
-                outline:none;
-                border: none;
-                transition: all .3s ease-in-out;
+            .fields{
+                justify-content: space-between;
+                .submit{
+                    background-color: rgb(2, 82, 35);
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    outline:none;
+                    border: none;
+                    transition: all .3s ease-in-out;
+                    width: 50%;
+                    padding: 1rem;
+                    border-radius: 10px;
+                    margin-right: 1rem;
+                }
+                .submit:hover{    background-color:green ;   }
+    
+              .status{   
+                    color: mediumblue;
+                    font-size: 1rem;
+                    font-weight: 800;
+                    flex-grow: 2;
+                    display: none;
+                }
             }
-            .submit:hover{
-                background-color:green ;
-            }
+            
         }
+
+      
     }
 }
 
 // medai querries for smaller devices
 @media  (max-width: 800px){
-    .container .wrapper {
+    .container .wrapper .form {
        
         .fields{
-        @include flexbox(column);
+             @include flexbox(column);
+       
 
-        .form-control{   margin: 0;  }
+            .form-control{ margin: 0.25rem;
+                    i{
+                        left: 10px;
+                    }
+            }
+
+            .submit{
+                width: 100% !important;
+                margin-left:0;
+            }
+        }
+        textarea{
+            height: 200px;
+            resize: none;
+            width: 100%;
+        }
+        .message-area i{
+            top: 18%;
+            left: 15px;
         }
 
         .form-control input , textarea, input[type="submit"]{

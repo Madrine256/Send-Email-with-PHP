@@ -78,22 +78,36 @@ body {
   color: #252850;
 }
 
-.container .wrapper .form .form-control input, .container .wrapper .form textarea, .container .wrapper .form input[type="submit"] {
+.container .wrapper .form .form-control input, .container .wrapper .form textarea {
   width: 100%;
   padding: 1rem 3rem;
   border-radius: 10px;
   outline: none;
+  border-width: 1px;
   font-size: 1rem;
   margin: 1rem;
 }
 
 .container .wrapper .form textarea {
-  height: 150px;
-  max-height: 100px;
+  min-width: 100%;
+  max-height: 200px;
   min-height: 100px;
   width: 100%;
   max-width: 100%;
-  resize: none;
+}
+
+.container .wrapper .form .message-area {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.container .wrapper .form .message-area i {
+  position: absolute;
+  top: 35%;
+  left: 30px;
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
 }
 
 .container .wrapper .form .form-control input:focus, .container .wrapper .form textarea:focus {
@@ -104,7 +118,13 @@ body {
   color: red;
 }
 
-.container .wrapper .form .submit {
+.container .wrapper .form .fields {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .wrapper .form .fields .submit {
   background-color: #025223;
   color: #fff;
   font-size: 1rem;
@@ -113,14 +133,28 @@ body {
   border: none;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-right: 1rem;
 }
 
-.container .wrapper .form .submit:hover {
+.container .wrapper .form .fields .submit:hover {
   background-color: green;
 }
 
+.container .wrapper .form .fields .status {
+  color: mediumblue;
+  font-size: 1rem;
+  font-weight: 800;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: none;
+}
+
 @media (max-width: 800px) {
-  .container .wrapper .fields {
+  .container .wrapper .form .fields {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -135,10 +169,26 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .container .wrapper .fields .form-control {
-    margin: 0;
+  .container .wrapper .form .fields .form-control {
+    margin: 0.25rem;
   }
-  .container .wrapper .form-control input, .container .wrapper textarea, .container .wrapper input[type="submit"] {
+  .container .wrapper .form .fields .form-control i {
+    left: 10px;
+  }
+  .container .wrapper .form .fields .submit {
+    width: 100% !important;
+    margin-left: 0;
+  }
+  .container .wrapper .form textarea {
+    height: 200px;
+    resize: none;
+    width: 100%;
+  }
+  .container .wrapper .form .message-area i {
+    top: 18%;
+    left: 15px;
+  }
+  .container .wrapper .form .form-control input, .container .wrapper .form textarea, .container .wrapper .form input[type="submit"] {
     margin: 0;
   }
 }
